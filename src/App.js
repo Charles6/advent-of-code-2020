@@ -1,6 +1,7 @@
 import './App.css';
 import DayOne from './calendar/day1';
 import DayTwo from './calendar/day2';
+import DayThree from './calendar/day3';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <main>
         <DayOne/>
         <DayTwo/>
+        <DayThree/>
 
 
 
