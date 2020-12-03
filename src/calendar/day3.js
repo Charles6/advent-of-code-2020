@@ -23,8 +23,8 @@ const sample = [
 ]
 
 
-const moveRight = (arr) => {
-    posX = (posX+3)
+const moveRight = (move, arr) => {
+    posX = (posX + move)
     if (posX >= (arr[posY].length)) {
         posX = (posX - (arr[posY].length));
     }
@@ -34,9 +34,10 @@ const moveDown = (move) => {
     posY = (posY + move);
 }
 
-const moveRead = (arr) => {
-    moveRight(arr);
-    moveDown(1)
+const moveRead = (arr, x, y) => {
+    moveRight(x, arr);
+    moveDown(y)
+    console.log(trees)
     if (arr[posY].charAt(posX)){
         if (arr[posY].charAt(posX) === "#") {
             trees++;
@@ -58,7 +59,7 @@ const dayThreeOutput = async () => {
     })
 
     for (let i=0; i<=fixArray.length-2; i++){
-        moveRead(fixArray);
+        moveRead(fixArray, 1, 2);
     }
 
     output3 = trees;
