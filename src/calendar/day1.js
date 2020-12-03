@@ -1,13 +1,15 @@
+import React from "react";
+
 let output1 = "day1";
 
-const testExpense = [
-    1721,
-    979,
-    366,
-    299,
-    675,
-    1456,
-];
+// const testExpense = [
+//     1721,
+//     979,
+//     366,
+//     299,
+//     675,
+//     1456,
+// ];
 
 const input = [
     1788,
@@ -224,8 +226,8 @@ const partsObj = {
 const runCheck = (arr) => {
     let twoOfThree = partsObj.partA + partsObj.partB;
 
-    for (i=0; i<arr.length; i++) {
-        if ( i != partsObj.partAIndex || i != partsObj.partBIndex) {
+    for (let i=0; i<arr.length; i++) {
+        if ( i !== partsObj.partAIndex || i !== partsObj.partBIndex) {
             if (twoOfThree + arr[i] === 2020) {
                 partsObj.partC = arr[i];
                 partsObj.partCIndex = i;
@@ -263,7 +265,20 @@ const matchSets = (arr) => {
     };
 };
 
-const dayOne = () => {
+const dayOneOutput = () => {
     matchSets(input);
     console.log("answer:", output1);
 };
+
+
+
+
+const DayOne = () => {
+
+    return (
+        <button onClick={()=>dayOneOutput()}>
+            day one
+        </button>
+    )
+}
+export default DayOne;

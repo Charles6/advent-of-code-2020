@@ -1,0 +1,46 @@
+:root {
+  --main-color:#33FF8A;
+}
+body {
+    background-color: black;
+    color:var(--main-color);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1 {
+  text-align: center;
+}
+button {
+    border: var(--main-color) 1px solid;
+    background-color: black;
+    color: var(--main-color);
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 4px;
+    cursor: pointer;
+    margin: 20px;
+}
+button:hover {
+    color: black;
+    background-color: var(--main-color);
+    transition: 1s;
+}
+a {
+  color:var(--main-color);
+  
+}
+a:hover {
+  color: white;
+  transition: 0.5s;
+}
+main {
+  border: var(--main-color) 1px solid;
+  border-radius: 4px;
+  margin: 20px;
+  padding:20px;
+}
