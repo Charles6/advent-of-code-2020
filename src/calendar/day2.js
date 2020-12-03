@@ -29,11 +29,32 @@ const checkString = (min, max, letter, password) => {
     return false;
 };
 
+const checkString2 = (posA, posB, letter, password) => {
+    let returnBool = false;
+    let A = false;
+    let B = false;
+    if (password.charAt(posA-1) === letter) {
+        A = true;
+        returnBool = true;
+    }
+    if (password.charAt(posB-1) === letter) {
+        B = true;
+        returnBool = true;
+    }
+    if (A === true && B === true) {
+        returnBool = false;
+    }
+    
+
+
+    return returnBool;
+}
+
 
 const buildList = (arr) => {
     let finalArr = [];
     arr.map(objItem => {
-        if (checkString(objItem.min, objItem.max, objItem.letter, objItem.password) === true) {
+        if (checkString2(objItem.min, objItem.max, objItem.letter, objItem.password) === true) {
             finalArr.push(objItem.password)
         }
     })
@@ -43,25 +64,9 @@ const buildList = (arr) => {
 
 
 
-
-
-
-
 const dayTwoOutput = async () => {
     let tempArray = await getInput(textInput);
     let tempTransform = transform(tempArray);
-
-    // var temp = "This is a string.";
-    // var letter = "s";
-    // var re = new RegExp(letter, "g");
-    // console.log(re);
-    // var count = (temp.match(re) || []).length;
-    // console.log(count);
-
-
-
-
-
 
     output2 = buildList(tempTransform);
     console.log("answer:", output2);
