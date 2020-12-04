@@ -12,7 +12,7 @@ nav {
   justify-content: space-around;
 }
 
-h1 {
+h1, h4 {
   text-align: center;
 }
 button {
@@ -43,4 +43,53 @@ main {
   border-radius: 4px;
   margin: 20px;
   padding:20px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 80px);
+}
+
+.mon {
+  grid-column: 1;
+}
+.tue {
+  grid-column: 2;
+}
+.wed {
+  grid-column: 3;
+}
+.thu {
+  grid-column: 4;
+}
+.fri {
+  grid-column: 5;
+}
+.sat {
+  grid-column: 6;
+}
+.sun {
+  grid-column: 7;
+}
+
+.label {
+  grid-row: 1;
+}
+.wk1 {
+  grid-row: 2;
+}
+.wk2 {
+  grid-row: 3;
+}
+.wk3 {
+  grid-row: 4;
+}
+.wk4 {
+  grid-row: 5;
+}
+
+.goal {
+  outline: var(--main-color) 1px solid;
+}
+
+.xmas {
+  outline: red 1px solid;
 }

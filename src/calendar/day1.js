@@ -276,7 +276,10 @@ const dayOneOutput = () => {
 const DayOne = () => {
 
     return (
-        <button onClick={()=>dayOneOutput()}>
+        <button
+            className="tue wk1"
+            onClick={()=>dayOneOutput()}
+        >
             day one
         </button>
     )

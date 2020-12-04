@@ -75,7 +75,10 @@ const dayTwoOutput = async () => {
 const DayTwo = () => {
 
     return (
-        <button onClick={()=>dayTwoOutput()}>
+        <button 
+            className="wed wk1"
+            onClick={()=>dayTwoOutput()}
+        >
             day two
         </button>
     )

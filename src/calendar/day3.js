@@ -1,6 +1,7 @@
 import React from "react";
 import textInput from "./day3-input.txt";
 import {getInput} from "../util";
+import chalk from "chalk";
 
 let output3 = "day3";
 
@@ -37,15 +38,15 @@ const moveDown = (move) => {
 const moveRead = (arr, x, y) => {
     moveRight(x, arr);
     moveDown(y)
-    console.log(trees)
+    // console.log(trees)
     if (arr[posY].charAt(posX)){
         if (arr[posY].charAt(posX) === "#") {
             trees++;
-            console.log(arr[posY].slice(0,(posX))+"X"+arr[posY].slice((posX+1))+" "+arr[posY].length+" " + arr[posY].charAt(posX) + " X: " + posX + " Y: " + posY)
+            console.log(arr[posY].slice(0,(posX))+chalk.red("#")+arr[posY].slice((posX+1))+" "+arr[posY].length+" " + arr[posY].charAt(posX) + " X: " + posX + " Y: " + posY)
         } else if (posX === 0) {
             console.log("O"+arr[posY].slice((posX+1))+" "+arr[posY].length+" " + arr[posY].charAt(posX) + " X: " + posX + " Y: " + posY)
         } else {
-            console.log(arr[posY].slice(0,(posX))+"O"+arr[posY].slice((posX+1))+" "+arr[posY].length+" " + arr[posY].charAt(posX) + " X: " + posX + " Y: " + posY)
+            console.log(arr[posY].slice(0,(posX))+chalk.green(".")+arr[posY].slice((posX+1))+" "+arr[posY].length+" " + arr[posY].charAt(posX) + " X: " + posX + " Y: " + posY)
         }
     }
 
@@ -59,7 +60,7 @@ const dayThreeOutput = async () => {
     })
 
     for (let i=0; i<=fixArray.length-2; i++){
-        moveRead(fixArray, 1, 2);
+        moveRead(fixArray, 5, 1);
     }
 
     output3 = trees;
@@ -69,7 +70,10 @@ const dayThreeOutput = async () => {
 const DayThree = () => {
 
     return (
-        <button onClick={()=>dayThreeOutput()}>
+        <button
+            className="thu wk1"
+            onClick={()=>dayThreeOutput()}
+        >
             day three
         </button>
     )
